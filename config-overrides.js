@@ -6,7 +6,7 @@ module.exports = {
   webpack: override(
     disableEsLint(),
     ...addBabelPlugins(
-      ['import', { libraryName: 'antd-mobile', style: true }],
+      ['import', { libraryName: 'antd-mobile', style: "css" }],
       "react-hot-loader/babel"
     ),
     addPostcssPlugins([
@@ -16,10 +16,10 @@ module.exports = {
       strictMath: true,
       noIeCompat: true,
       modifyVars: theme,
-      javascriptEnabled: true
+      javascriptEnabled: true,
     })
   ),
   devServer: overrideDevServer(
-    // dev server plugin
+    
   )
 };

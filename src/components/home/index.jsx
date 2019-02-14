@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { TabBar } from 'antd-mobile';
+import MainContent from '../main/index';
 import './index.less';
+
+const PageText={
+  Main:"main",
+  Shop:"shops",
+  My:"my",
+}
+Object.freeze(PageText);
 
 export class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: PageText.Main,
       hidden: false,
-      fullScreen: false,
     };
   }
 
-  renderContent(pageText) {
-    return (
-      <div>
-        hehe
-      </div>
-    );
-  }
 
   render() {
     return (
@@ -30,8 +30,8 @@ export class Home extends React.Component {
           hidden={this.state.hidden}
         >
           <TabBar.Item
-            title="Life"
-            key="Life"
+            title="i分类"
+            key={PageText.Main}
             icon={<div style={{
               width: '22px',
               height: '22px',
@@ -46,16 +46,15 @@ export class Home extends React.Component {
             }}
             />
             }
-            selected={this.state.selectedTab === 'blueTab'}
-            badge={1}
+            selected={this.state.selectedTab === PageText.Main}
             onPress={() => {
               this.setState({
-                selectedTab: 'blueTab',
+                selectedTab: PageText.Main,
               });
             }}
             data-seed="logId"
           >
-            {this.renderContent('Life')}
+            <MainContent />
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -74,18 +73,17 @@ export class Home extends React.Component {
               }}
               />
             }
-            title="Koubei"
-            key="Koubei"
-            badge={'new'}
-            selected={this.state.selectedTab === 'redTab'}
+            title="积分商城"
+            key={PageText.Shop}
+            selected={this.state.selectedTab === PageText.Shop}
             onPress={() => {
               this.setState({
-                selectedTab: 'redTab',
+                selectedTab:PageText.Shop,
               });
             }}
             data-seed="logId1"
           >
-            {this.renderContent('Koubei')}
+            <div>积分商城</div>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -104,17 +102,16 @@ export class Home extends React.Component {
               }}
               />
             }
-            title="Friend"
-            key="Friend"
-            dot
-            selected={this.state.selectedTab === 'greenTab'}
+            title="我的"
+            key={PageText.My}
+            selected={this.state.selectedTab === PageText.My}
             onPress={() => {
               this.setState({
-                selectedTab: 'greenTab',
+                selectedTab: PageText.My
               });
             }}
           >
-            {this.renderContent('Friend')}
+            <div>my</div>
           </TabBar.Item>
         </TabBar>
       </div>
