@@ -1,0 +1,40 @@
+@import "../../utils/common.less";
+
+#root .main{
+  &>div{
+    background-color: #fff;
+    margin-bottom:20px; 
+  }
+  .title{
+    padding: 20px 0;
+    text-align: center;
+    &>a{
+      box-shadow: 1px 0px 0px 0px #ccc;
+      width: 33.333333%;
+      &>div{
+        margin-top: 20px;
+      }
+    }
+  }
+  .msg{
+    padding: 20px;
+    align-items: center;
+    &>div{
+      width: 20%;
+      text-align: center;
+    }
+    &>ul{
+      padding: 0;
+      li{
+        margin-bottom: 10px;
+        &>span:first-child{
+          border: 1px solid @green;
+          color: @green;
+          border-radius: 5px;
+          padding: 0 5px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
