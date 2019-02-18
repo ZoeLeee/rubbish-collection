@@ -8,7 +8,6 @@ export const MsgType={
 export class MessageItem extends Component {
   renderMsg=()=>{
     const {type,text}=this.props;
-
     switch(type){
       case MsgType.Score:
         return (
