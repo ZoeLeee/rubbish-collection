@@ -99,8 +99,8 @@ module.exports = function(webpackEnv) {
             }),
             require('postcss-px-to-viewport')({
               unitToConvert: 'px',
-              viewportWidth: 750,
-              viewportHeight: 1334,
+              viewportWidth: 375,
+              viewportHeight:667,
               unitPrecision: 5,
               viewportUnit: 'vw',
               fontViewportUnit: 'vw',  // vmin is more suitable.

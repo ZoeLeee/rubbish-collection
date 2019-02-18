@@ -6,18 +6,6 @@ import './index.less';
 export default class MainContent extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			data: ['1', '2', '3'],
-			imgHeight: 176,
-		}
-	}
-	componentDidMount() {
-		// simulate img loading
-		setTimeout(() => {
-			this.setState({
-				data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-			});
-		}, 100);
 	}
 	render() {
 		return (
@@ -26,24 +14,18 @@ export default class MainContent extends Component {
 				<WingBlank>
 					<Carousel
 						dots
-						autoplay={false}
+						autoplay={true}
 						infinite
 					>
 						{this.state.data.map(val => (
 							<a
 								key={val}
-								href="http://www.alipay.com"
-								style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+								style={{ display: 'inline-block', width: '100%', height: 176 }}
 							>
 								<img
 									src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
 									alt=""
-									style={{ width: '100%', verticalAlign: 'top' }}
-									onLoad={() => {
-										// fire window resize event to change height
-										window.dispatchEvent(new Event('resize'));
-										this.setState({ imgHeight: 'auto' });
-									}}
+									style={{ width: '100%',height: "100%", verticalAlign: 'top' }}
 								/>
 							</a>
 						))}
