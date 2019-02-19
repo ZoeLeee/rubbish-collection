@@ -3,14 +3,18 @@ import { Carousel, WingBlank,Icon } from 'antd-mobile';
 import {MessageItem,MsgType} from '../message/index';
 import { Link } from "react-router-dom";
 import './index.less';
+import NavBar from '../navbar';
 export default class MainContent extends Component {
 	constructor(props) {
-		super(props);
+    super(props);
+    this.state={
+      data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI']
+    }
 	}
 	render() {
 		return (
 			<div className="main">
-				<h1 >导航栏</h1>
+				<NavBar />
 				<WingBlank>
 					<Carousel
 						dots
