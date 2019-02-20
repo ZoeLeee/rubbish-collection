@@ -18,8 +18,6 @@ export class Home extends React.Component {
       hidden: false,
     };
   }
-
-
   render() {
     return (
       <div className="home">
