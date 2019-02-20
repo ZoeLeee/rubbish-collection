@@ -4,11 +4,22 @@ import {MessageItem,MsgType} from '../message/index';
 import { Link } from "react-router-dom";
 import './index.less';
 import NavBar from '../navbar';
+import TitleComponent from '../title';
 export default class MainContent extends Component {
 	constructor(props) {
     super(props);
     this.state={
-      data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI']
+      data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+      titles1:[
+        {title:"预约服务",icon:"loading",url:"/appointment"},
+        {title:"绿色银行",icon:"loading",url:"/appointment"},
+        {title:"绿丝带",icon:"loading",url:"/appointment"},
+      ],
+      titles2:[
+        {title:"打卡比赛",icon:"loading",url:"/appointment"},
+        {title:"标签投放",icon:"loading",url:"/appointment"},
+        {title:"拍照投放",icon:"loading",url:"/appointment"},
+      ],
     }
 	}
 	render() {
@@ -35,20 +46,7 @@ export default class MainContent extends Component {
 						))}
 					</Carousel>
 				</WingBlank>
-				<div className="flex-ar title">
-					<Link to="/appointment">
-						<Icon type="loading" color="#3CA53B" />
-						<div>预约服务</div>
-					</Link>
-					<Link to="/appointment">
-						<Icon type="loading"  color="#3CA53B" />
-						<div>绿色银行</div>
-					</Link>
-					<Link to="/appointment">
-						<Icon type="loading"  color="#3CA53B" />
-						<div>绿丝带</div>
-					</Link>
-				</div>
+        <TitleComponent data={this.state.titles1} />
         <div className="msg flex">
           <div>
             <div>最新</div>消息
@@ -58,6 +56,10 @@ export default class MainContent extends Component {
             <MessageItem type={MsgType.Symbol} text="您的垃圾..." />
           </ul>
         </div>
+        <h5>
+            今天你参与分类了吗  
+        </h5>
+        <TitleComponent data={this.state.titles2} />
 			</div>
 		)
 	}

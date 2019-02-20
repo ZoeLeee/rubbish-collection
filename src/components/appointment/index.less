@@ -1,0 +1,21 @@
+@import "../../utils/common.less";
+
+#root .appointment{
+  height: 100%;
+  .footer{
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    &>span{
+      padding: 10px 0;
+      width: 33.3333333%;
+      border:1px solid transparent;
+    }
+    &>span.active{
+      color:@green;
+      border-color:@green;
+    }
+  }
+}
